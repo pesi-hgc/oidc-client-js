@@ -22,7 +22,7 @@ export class CordovaPopupWindow {
     }
 
     _isInAppBrowserInstalled(cordovaMetadata) {
-        return ["cordova-plugin-inappbrowser", "cordova-plugin-inappbrowser.inappbrowser", "org.apache.cordova.inappbrowser"].some(function (name) {
+        return ["cordova-plugin-inappbrowser", "cordova-plugin-inappbrowser.inappbrowser", "org.apache.cordova.inappbrowser", "cordova-plugin-inappbrowser-transparent"].some(function (name) {
             return cordovaMetadata.hasOwnProperty(name)
         })
     }
@@ -90,7 +90,7 @@ export class CordovaPopupWindow {
             Log.debug("CordovaPopupWindow: cleaning up popup");
             this._popup.removeEventListener("exit", this._exitCallbackEvent, false);
             this._popup.removeEventListener("loadstart", this._loadStartCallbackEvent, false);
-            this._popup.close();
+            this._popup.hide();
         }
         this._popup = null;
     }
