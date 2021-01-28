@@ -90,7 +90,8 @@ export class CordovaPopupWindow {
             Log.debug("CordovaPopupWindow: cleaning up popup");
             this._popup.removeEventListener("exit", this._exitCallbackEvent, false);
             this._popup.removeEventListener("loadstart", this._loadStartCallbackEvent, false);
-            this._popup.hide();
+            //this._popup.hide();
+            this._popup.close();
         }
         this._popup = null;
     }
